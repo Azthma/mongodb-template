@@ -12,7 +12,7 @@ class userController {
             if (!findUser) {
                 const hash = bcrypt.hashSync(defaults.password, 10);
                 defaults.password = hash;
-                const user = await userRepository.insertOne(defaults);
+                const user = await userRepository.create(defaults);
                 res.json(user);
             } else {
                 return res.json({

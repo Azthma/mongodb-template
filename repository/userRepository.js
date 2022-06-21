@@ -1,7 +1,7 @@
 const User = require("../models/userModel");
 
 class UserRepository {
-    async insertOne(data) {
+    async create(data) {
         let user = await User.create(data);
 
         return user;
